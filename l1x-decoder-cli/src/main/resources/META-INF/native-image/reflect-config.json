@@ -1,0 +1,136 @@
+[
+{
+  "name":"com.fasterxml.jackson.databind.ext.Java7HandlersImpl",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"com.fasterxml.jackson.databind.ext.Java7SupportImpl",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"co.l1x.decode.main.picocli.PicocliStreamDecoder",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"co.l1x.decode.main.template.TemplateEntry",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
+  "name":"java.io.FilePermission"
+},
+{
+  "name":"java.lang.Object",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true
+},
+{
+  "name":"java.lang.RuntimePermission"
+},
+{
+  "name":"java.net.NetPermission"
+},
+{
+  "name":"java.net.SocketPermission"
+},
+{
+  "name":"java.net.URLPermission",
+  "methods":[{"name":"<init>","parameterTypes":["java.lang.String","java.lang.String"] }]
+},
+{
+  "name":"java.nio.file.Path"
+},
+{
+  "name":"java.nio.file.Paths",
+  "queriedMethods":[{"name":"get","parameterTypes":["java.lang.String","java.lang.String[]"] }]
+},
+{
+  "name":"java.security.AllPermission"
+},
+{
+  "name":"java.security.SecurityPermission"
+},
+{
+  "name":"java.sql.Connection"
+},
+{
+  "name":"java.sql.Driver"
+},
+{
+  "name":"java.sql.DriverManager",
+  "queriedMethods":[
+    {"name":"getConnection","parameterTypes":["java.lang.String"] }, 
+    {"name":"getDriver","parameterTypes":["java.lang.String"] }
+  ]
+},
+{
+  "name":"java.sql.Time",
+  "queriedMethods":[{"name":"<init>","parameterTypes":["long"] }]
+},
+{
+  "name":"java.sql.Timestamp",
+  "queriedMethods":[{"name":"valueOf","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"java.time.Duration",
+  "queriedMethods":[{"name":"parse","parameterTypes":["java.lang.CharSequence"] }]
+},
+{
+  "name":"java.time.Instant",
+  "queriedMethods":[{"name":"parse","parameterTypes":["java.lang.CharSequence"] }]
+},
+{
+  "name":"java.time.LocalDate",
+  "queriedMethods":[{"name":"parse","parameterTypes":["java.lang.CharSequence"] }]
+},
+{
+  "name":"java.time.LocalDateTime",
+  "queriedMethods":[{"name":"parse","parameterTypes":["java.lang.CharSequence"] }]
+},
+{
+  "name":"java.time.LocalTime",
+  "queriedMethods":[{"name":"parse","parameterTypes":["java.lang.CharSequence"] }]
+},
+{
+  "name":"java.time.MonthDay",
+  "queriedMethods":[{"name":"parse","parameterTypes":["java.lang.CharSequence"] }]
+},
+{
+  "name":"java.time.OffsetDateTime",
+  "queriedMethods":[{"name":"parse","parameterTypes":["java.lang.CharSequence"] }]
+},
+{
+  "name":"java.time.OffsetTime",
+  "queriedMethods":[{"name":"parse","parameterTypes":["java.lang.CharSequence"] }]
+},
+{
+  "name":"java.time.Period",
+  "queriedMethods":[{"name":"parse","parameterTypes":["java.lang.CharSequence"] }]
+},
+{
+  "name":"java.time.Year",
+  "queriedMethods":[{"name":"parse","parameterTypes":["java.lang.CharSequence"] }]
+},
+{
+  "name":"java.time.YearMonth",
+  "queriedMethods":[{"name":"parse","parameterTypes":["java.lang.CharSequence"] }]
+},
+{
+  "name":"java.time.ZoneId",
+  "queriedMethods":[{"name":"of","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"java.time.ZoneOffset",
+  "queriedMethods":[{"name":"of","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"java.time.ZonedDateTime",
+  "queriedMethods":[{"name":"parse","parameterTypes":["java.lang.CharSequence"] }]
+},
+{
+  "name":"java.util.PropertyPermission"
+}
+]

@@ -1,0 +1,60 @@
+plugins {
+	id 'application'
+	id 'com.github.johnrengelman.shadow'
+	id "org.mikeneck.graalvm-native-image"
+}
+
+dependencies {
+	implementation "ch.qos.logback:logback-classic:${logbackVersion}"
+	implementation "org.unbescape:unbescape:${unbescapeVersion}"
+	implementation "com.fasterxml.jackson.core:jackson-core:${jacksonVersion}"
+	implementation "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
+	implementation "commons-io:commons-io:${commonsIoVersion}"
+	implementation "info.picocli:picocli:${picocliVersion}"
+
+	// This automatically adds the necessary native image config for picocli
+	//
+	annotationProcessor "info.picocli:picocli-codegen:${picocliVersion}"
+
+	implementation(
+		project(":l1x-decoder-core")
+	)
+}
+
+compileJava {
+	// This tells the native image picocli config where to place the files.
+	//
+	options.compilerArgs += ["-Aproject=${project.group}/${project.name}"]
+}
+
+application {
+	// Using the application plugin somehow fixes the main class not appearing in the manifest correctly...
+	//
+	mainClass = 'co.l1x.decode.main.DecoderMain'
+}
+
+shadowJar {
+	// This is required to properly pack our Log4j2 plugins with all the other existing ones.
+	//
+	transform(com.github.jengelman.gradle.plugins.shadow.transformers.Log4j2PluginsCacheFileTransformer)
+	
+	// This is required to properly merge all the META-INF stuff that we have.
+	//
+	mergeServiceFiles()
+}
+
+nativeImage {
+	graalVmHome = System.getProperty('java.home')
+	mainClass = 'co.l1x.decode.main.DecoderMain'
+	executableName = 'l1x-decoder'
+	arguments(
+			'--no-fallback',
+			'--verbose',
+			'--allow-incomplete-classpath',
+			'--report-unsupported-elements-at-runtime'
+	)
+}
+
+// Forces the native image gradle task to always run when requested, effectively "never up to date"
+//
+tasks.nativeImage.outputs.upToDateWhen { false }
