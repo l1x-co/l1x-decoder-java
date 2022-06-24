@@ -13,7 +13,10 @@ def configureProject(project) {
 
 subprojects {
 	apply plugin: "java"
-	
+
+	sourceCompatibility = 1.8
+	targetCompatibility = 1.8
+
 	group = "co.l1x"
 
 	ext {
