@@ -89,7 +89,7 @@ public class TemplateProvider {
 	private Template createTemplate(String hash) {
 		String rawTemplate = rawTemplates.get(hash);
 
-		if (StringUtil.isNullOrBlank(rawTemplate)) {
+		if (StringUtil.isNullOrEmpty(rawTemplate)) {
 			logger.warn("No raw template found for {}.", hash);
 
 			return null;

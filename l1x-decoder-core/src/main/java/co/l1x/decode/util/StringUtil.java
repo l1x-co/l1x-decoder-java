@@ -6,8 +6,8 @@ public class StringUtil {
 		
 	private static final int MAX_PRINT_LEN = 1024;
 	
-	public static boolean isNullOrBlank(String val) {
-		return ((val == null) || (val.isBlank()));
+	public static boolean isNullOrEmpty(String val) {
+		return ((val == null) || (val.isEmpty()));
 	}
 	
 	public static String formatList(Object... values) {
