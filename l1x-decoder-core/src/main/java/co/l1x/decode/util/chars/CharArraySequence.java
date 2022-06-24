@@ -1,7 +1,6 @@
 package co.l1x.decode.util.chars;
 
-import java.util.Arrays;
-
+import co.l1x.decode.util.ArrayUtil;
 import co.l1x.decode.util.StringUtil;
 
 public class CharArraySequence implements CharSequence, Cloneable {
@@ -127,7 +126,7 @@ public class CharArraySequence implements CharSequence, Cloneable {
 			
 			CharArraySequence other = (CharArraySequence)obj;
 			
-			return Arrays.equals(
+			return ArrayUtil.equals(
 				this.array(), this.start(), this.start() + this.length(),
 				other.array(), other.start(), other.start() + other.length());			
 		}
@@ -146,7 +145,8 @@ public class CharArraySequence implements CharSequence, Cloneable {
 			
 			int start =  this.start();
 			
-			return (Arrays.equals(this.array(), start, start + len,
+			return (ArrayUtil.equals(
+				this.array(), start, start + len,
 				array, 0, array.length));
 		}
 
