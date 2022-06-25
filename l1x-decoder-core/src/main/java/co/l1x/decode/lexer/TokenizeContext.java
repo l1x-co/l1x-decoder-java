@@ -7,6 +7,12 @@ import co.l1x.decode.options.TokenOptions;
 
 public class TokenizeContext {
 
+	public static final TokenizeContext DEFAULT = create(
+			new TokenOptions(),
+			new TimestampOptions(true),
+			new TemplateEncodeOptions(),
+			new EventEncodeOptions());
+
 	private final TokenOptions tokenOptions;
 
 	private final TimestampOptions timestampOptions;
@@ -14,7 +20,7 @@ public class TokenizeContext {
 	private final TemplateEncodeOptions templateOptions;
 
 	private final EventEncodeOptions eventOptions;
-	
+
 	private TokenizeContext(TokenOptions tokenOptions, TimestampOptions timestampOptions,
 			TemplateEncodeOptions templateOptions, EventEncodeOptions eventOptions) {
 
@@ -39,7 +45,7 @@ public class TokenizeContext {
 	public EventEncodeOptions eventOptions() {
 		return this.eventOptions;
 	}
-	
+
 	public static TokenizeContext create(TokenOptions tokenOptions, TimestampOptions timestampOptions,
 			TemplateEncodeOptions templateOptions, EventEncodeOptions eventOptions) {
 
